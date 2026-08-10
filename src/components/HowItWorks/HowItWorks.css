@@ -1,0 +1,27 @@
+.how-section {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.step-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.step-icon {
+    font-size: 55px;
+    color: #0d6efd;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.step-card h4 {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.step-card p {
+    color: #6c757d;
+}

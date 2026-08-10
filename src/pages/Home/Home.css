@@ -1,0 +1,54 @@
+.hero-section {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #eef6ff, #ffffff);
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #0d1b2a;
+}
+
+.hero-title span {
+    color: #0d6efd;
+}
+
+.hero-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin: 25px 0;
+    max-width: 550px;
+}
+
+.hero-btn {
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-4px);
+}
+
+.hero-image {
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}

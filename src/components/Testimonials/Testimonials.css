@@ -1,0 +1,31 @@
+.testimonial-section {
+    padding: 80px 0;
+    background: #f8fbff;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    transition: 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-card p {
+    color: #555;
+    font-style: italic;
+}
+
+.testimonial-card h5 {
+    margin-top: 20px;
+    font-weight: 700;
+}
+
+.testimonial-card span {
+    color: gray;
+}
