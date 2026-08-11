@@ -1,0 +1,166 @@
+.mock-interview-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  padding: 60px 20px;
+}
+
+.mock-interview-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.interview-start-card,
+.interview-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.interview-start-card {
+  text-align: center;
+}
+
+.interview-start-card h1,
+.interview-card h1 {
+  color: #172554;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.interview-start-card p {
+  color: #64748b;
+  font-size: 18px;
+}
+
+.interview-info {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin: 35px 0;
+}
+
+.interview-info div {
+  background: #f1f5f9;
+  padding: 20px 30px;
+  border-radius: 12px;
+  min-width: 120px;
+}
+
+.interview-info strong {
+  display: block;
+  font-size: 24px;
+  color: #2563eb;
+}
+
+.interview-info span {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.start-interview-btn,
+.next-btn,
+.finish-btn,
+.previous-btn {
+  border: none;
+  padding: 13px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.start-interview-btn,
+.next-btn,
+.finish-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.start-interview-btn:hover,
+.next-btn:hover,
+.finish-btn:hover {
+  background: #1d4ed8;
+}
+
+.interview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.interview-header span {
+  color: #64748b;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  margin: 25px 0 40px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.question-number {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.question-section h2 {
+  color: #172554;
+  margin: 15px 0 25px;
+}
+
+.question-section textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  font-size: 16px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.question-section textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.interview-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.previous-btn {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.previous-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .interview-info {
+    flex-direction: column;
+  }
+
+  .interview-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .interview-actions {
+    gap: 10px;
+  }
+}

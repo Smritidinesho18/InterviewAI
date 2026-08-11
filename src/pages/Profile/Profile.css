@@ -1,0 +1,84 @@
+.profile-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.profile-card {
+  width: 450px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.profile-avatar {
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e8f0ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+.profile-card h1 {
+  margin-bottom: 30px;
+}
+
+.profile-info {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.profile-info div {
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #f8f9fc;
+  border-radius: 10px;
+}
+
+.profile-info span {
+  color: #777;
+  font-size: 14px;
+}
+
+.profile-info h3 {
+  margin: 5px 0 0;
+  font-size: 17px;
+}
+
+.back-dashboard-btn,
+.profile-logout-btn {
+  width: 100%;
+  padding: 13px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.back-dashboard-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.back-dashboard-btn:hover {
+  background: #1d4ed8;
+}
+
+.profile-logout-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.profile-logout-btn:hover {
+  background: #b91c1c;
+}

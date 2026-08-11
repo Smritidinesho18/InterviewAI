@@ -9,6 +9,8 @@ import MockInterview from "./pages/MockInterview/MockInterview";
 import CodingPractice from "./pages/CodingPractice/CodingPractice";
 import Profile from "./pages/Profile/Profile";
 
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+
 function App() {
   return (
     <BrowserRouter>
@@ -20,7 +22,14 @@ function App() {
 
         <Route path="/register" element={<Register />} />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+/>
 
         <Route
           path="/resume-analyzer"

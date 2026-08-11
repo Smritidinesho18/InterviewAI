@@ -1,0 +1,176 @@
+.dashboard {
+  min-height: 100vh;
+  padding: 40px 8%;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+
+/* Header */
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.dashboard-header h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.dashboard-header p {
+  font-size: 18px;
+  color: #6b7280;
+}
+
+
+/* Profile Button */
+
+.profile-btn {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 10px;
+  background: #2563eb;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.profile-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* Main Cards */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-6px);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 15px;
+  font-size: 23px;
+}
+
+.dashboard-card p {
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.dashboard-card button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 9px;
+  background: #2563eb;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard-card button:hover {
+  background: #1d4ed8;
+}
+
+
+/* Progress */
+
+.progress-section {
+  margin-top: 50px;
+}
+
+.progress-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.progress-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.progress-cards div {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.progress-cards h3 {
+  font-size: 32px;
+  color: #2563eb;
+  margin-bottom: 8px;
+}
+
+.progress-cards p {
+  color: #6b7280;
+}
+
+
+/* Logout */
+
+.logout-btn {
+  margin-top: 45px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 9px;
+  background: #dc2626;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: #b91c1c;
+}
+
+
+/* Responsive */
+
+@media (max-width: 900px) {
+
+  .dashboard-cards,
+  .progress-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+}
+
+
+@media (max-width: 500px) {
+
+  .dashboard {
+    padding: 25px 5%;
+  }
+
+  .dashboard-header h1 {
+    font-size: 30px;
+  }
+
+}
