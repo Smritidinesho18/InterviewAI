@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./CodingPractice.css";
+
 const problems = {
   Easy: [
     {
@@ -23,7 +24,6 @@ const problems = {
         }
       ]
     },
-
     {
       title: "Reverse a String",
       description:
@@ -65,7 +65,6 @@ const problems = {
         }
       ]
     },
-
     {
       title: "Valid Parentheses",
       description:
@@ -103,7 +102,6 @@ const problems = {
         }
       ]
     },
-
     {
       title: "Merge Intervals",
       description:
@@ -126,52 +124,43 @@ const problems = {
 
 function CodingPractice() {
   const [difficulty, setDifficulty] = useState("Easy");
+  const [language, setLanguage] = useState("Java");
   const [currentProblem, setCurrentProblem] = useState(0);
   const [code, setCode] = useState("");
   const [result, setResult] = useState("");
-const [testResults, setTestResults] = useState([]);
-const [codingScore, setCodingScore] = useState(0);
- 
-const handleRunCode = () => {
-  if (code.trim() === "") {
-    setResult("❌ Please write some code first.");
-    setTestResults([]);
-    setCodingScore(0);
-    return;
-  }
-
-  const results = problem.testCases.map((testCase) => ({
-    input: testCase.input,
-    expected: testCase.expected,
-    status: "Passed"
-  }));
-
-  setTestResults(results);
-
-  const passedTests = results.filter(
-    (test) => test.status === "Passed"
-  ).length;
-
-  const score = Math.round(
-    (passedTests / results.length) * 10
-  );
-
-  setCodingScore(score);
-  setResult("✅ All test cases passed!");
-};
-
-  const results = problem.testCases.map((testCase) => ({
-    input: testCase.input,
-    expected: testCase.expected,
-    status: "Passed"
-  }));
-
-  setTestResults(results);
-  setResult("✅ All test cases passed!");
-};
+  const [testResults, setTestResults] = useState([]);
+  const [codingScore, setCodingScore] = useState(0);
 
   const selectedProblems = problems[difficulty];
   const problem = selectedProblems[currentProblem];
+
+  const handleRunCode = () => {
+    if (code.trim() === "") {
+      setResult("❌ Please write some code first.");
+      setTestResults([]);
+      setCodingScore(0);
+      return;
+    }
+
+    const results = problem.testCases.map((testCase) => ({
+      input: testCase.input,
+      expected: testCase.expected,
+      status: "Passed"
+    }));
+
+    setTestResults(results);
+
+    const passedTests = results.filter(
+      (test) => test.status === "Passed"
+    ).length;
+
+    const score = Math.round(
+      (passedTests / results.length) * 10
+    );
+
+    setCodingScore(score);
+    setResult("✅ All test cases passed!");
+  };
 
   return (
     <div className="coding-page">
@@ -185,6 +174,30 @@ const handleRunCode = () => {
         </p>
 
         {/* DIFFICULTY */}
+        <div className="language-section">
+
+  <label htmlFor="language">
+    Choose Language
+  </label>
+
+  <select
+    id="language"
+    value={language}
+    onChange={(e) => {
+  setLanguage(e.target.value);
+  setCode("");
+  setResult("");
+  setTestResults([]);
+  setCodingScore(0);
+}}
+  >
+    <option value="Java">Java</option>
+    <option value="Python">Python</option>
+    <option value="C++">C++</option>
+    <option value="JavaScript">JavaScript</option>
+  </select>
+
+</div>
 
         <div className="difficulty-section">
 
@@ -193,7 +206,6 @@ const handleRunCode = () => {
           <div className="difficulty-buttons">
 
             {["Easy", "Medium", "Hard"].map((level) => (
-
               <button
                 key={level}
                 className={
@@ -206,11 +218,12 @@ const handleRunCode = () => {
                   setCurrentProblem(0);
                   setCode("");
                   setResult("");
+                  setTestResults([]);
+                  setCodingScore(0);
                 }}
               >
                 {level}
               </button>
-
             ))}
 
           </div>
@@ -234,43 +247,48 @@ const handleRunCode = () => {
           </pre>
 
         </div>
+
+        {/* PROBLEM NAVIGATION */}
+
         <div className="problem-navigation">
 
-  <button
-    className="problem-nav-btn"
-    onClick={() => {
-      if (currentProblem > 0) {
-        setCurrentProblem(currentProblem - 1);
-        setCode("");
-        setResult("");
-        setTestResults([]);
-      }
-    }}
-    disabled={currentProblem === 0}
-  >
-    ← Previous Problem
-  </button>
+          <button
+            className="problem-nav-btn"
+            onClick={() => {
+              if (currentProblem > 0) {
+                setCurrentProblem(currentProblem - 1);
+                setCode("");
+                setResult("");
+                setTestResults([]);
+                setCodingScore(0);
+              }
+            }}
+            disabled={currentProblem === 0}
+          >
+            ← Previous Problem
+          </button>
 
-  <span>
-    Problem {currentProblem + 1} / {selectedProblems.length}
-  </span>
+          <span>
+            Problem {currentProblem + 1} / {selectedProblems.length}
+          </span>
 
-  <button
-    className="problem-nav-btn"
-    onClick={() => {
-      if (currentProblem < selectedProblems.length - 1) {
-        setCurrentProblem(currentProblem + 1);
-        setCode("");
-        setResult("");
-        setTestResults([]);
-      }
-    }}
-    disabled={currentProblem === selectedProblems.length - 1}
-  >
-    Next Problem →
-  </button>
+          <button
+            className="problem-nav-btn"
+            onClick={() => {
+              if (currentProblem < selectedProblems.length - 1) {
+                setCurrentProblem(currentProblem + 1);
+                setCode("");
+                setResult("");
+                setTestResults([]);
+                setCodingScore(0);
+              }
+            }}
+            disabled={currentProblem === selectedProblems.length - 1}
+          >
+            Next Problem →
+          </button>
 
-</div>
+        </div>
 
         {/* CODE EDITOR */}
 
@@ -284,7 +302,7 @@ const handleRunCode = () => {
             className="code-editor"
             value={code}
             onChange={(e) => setCode(e.target.value)}
-            placeholder="Write your Java code here..."
+            placeholder={`Write your ${language} code here...`}
           />
 
           <button
@@ -297,59 +315,71 @@ const handleRunCode = () => {
           {/* RESULT */}
 
           {result && (
-  <div className="code-result">
+            <div className="code-result">
 
-    <h3>
-      Result
-    </h3>
+              <h3>
+                Result
+              </h3>
 
-    <p>
-      {result}
-    </p>
-    {testResults.length > 0 && (
-  <div className="coding-score">
-    <span>Score</span>
-    <strong>{codingScore} / 10</strong>
-  </div>
-)}
+              <p>
+                {result}
+              </p>
 
-    {testResults.length > 0 && (
-      <div className="test-results">
+              {/* SCORE */}
 
-        <h3>
-          Test Cases
-        </h3>
+              {testResults.length > 0 && (
+                <div className="coding-score">
 
-        {testResults.map((test, index) => (
-          <div
-            className="test-case"
-            key={index}
-          >
+                  <span>
+                    Score
+                  </span>
 
-            <strong>
-              Test Case {index + 1}
-            </strong>
+                  <strong>
+                    {codingScore} / 10
+                  </strong>
 
-            <p>
-              Input: {test.input}
-            </p>
+                </div>
+              )}
 
-            <p>
-              Expected: {test.expected}
-            </p>
+              {/* TEST RESULTS */}
 
-            <span className="passed">
-              ✓ Passed
-            </span>
+              {testResults.length > 0 && (
+                <div className="test-results">
 
-          </div>
-        ))}
+                  <h3>
+                    Test Cases
+                  </h3>
 
-      </div>
-    )}
+                  {testResults.map((test, index) => (
+                    <div
+                      className="test-case"
+                      key={index}
+                    >
 
-  </div>
-)}
+                      <strong>
+                        Test Case {index + 1}
+                      </strong>
+
+                      <p>
+                        Input: {test.input}
+                      </p>
+
+                      <p>
+                        Expected: {test.expected}
+                      </p>
+
+                      <span className="passed">
+                        ✓ Passed
+                      </span>
+
+                    </div>
+                  ))}
+
+                </div>
+              )}
+
+            </div>
+          )}
 
         </div>
 
