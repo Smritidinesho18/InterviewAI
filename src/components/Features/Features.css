@@ -52,4 +52,26 @@
     align-items: center;
     margin: 0 auto 25px;
     box-shadow: 0 10px 25px rgba(13,110,253,0.3);
+}.clickable-feature {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clickable-feature:hover {
+  transform: translateY(-8px);
+}
+
+.feature-btn {
+  margin-top: 15px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-size: 14px;
+}
+
+.feature-btn:hover {
+  opacity: 0.9;
 }

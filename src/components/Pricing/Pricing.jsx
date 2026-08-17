@@ -1,77 +1,110 @@
+import { useNavigate } from "react-router-dom";
 import "./Pricing.css";
 
 function Pricing() {
+  const navigate = useNavigate();
+
   return (
-    <section  id="pricing" className="pricing-section" >
+    <section id="pricing" className="pricing-section">
       <div className="container">
 
         <h2 className="text-center mb-5">
           Choose Your Plan
         </h2>
 
-        <div className="row g-4">
+        <div className="pricing-grid">
 
-          <div className="col-md-4">
-            <div className="price-card">
-              <h3>Free</h3>
-              <h1>₹0</h1>
+          {/* FREE */}
+          <div className="price-card">
 
-              <p>✔ 5 Mock Interviews</p>
-              <p>✔ Resume Analysis</p>
-              <p>✔ Basic AI Feedback</p>
+            <h3>Free</h3>
 
-              <button className="btn btn-outline-primary mt-3">
-                Get Started
-              </button>
-            </div>
-          </div>
-<div className="col-md-4">
-  <div className="price-card popular">
+            <h1>₹0</h1>
 
-    <div className="popular-badge">
-      Most Popular
-    </div>
+            <p>✔ 5 Mock Interviews</p>
+            <p>✔ Resume Analysis</p>
+            <p>✔ Basic AI Feedback</p>
 
-    <h3>Pro</h3>
-    <h1>₹499</h1>
+            <button
+              className="pricing-btn outline-btn"
+              onClick={() => navigate("/register")}
+            >
+              Get Started
+            </button>
 
-    <p>✔ Unlimited Interviews</p>
-    <p>✔ Advanced AI Feedback</p>
-    <p>✔ Coding Practice</p>
-
-    <button className="btn btn-primary mt-3">
-      Buy Now
-    </button>
-
-  </div>
-</div>
-          <div className="col-md-4">
-            <div className="price-card">
-              <h3>Pro</h3>
-              <h1>₹499</h1>
-              <p>✔ Unlimited Interviews</p>
-              <p>✔ Advanced AI Feedback</p>
-              <p>✔ Coding Practice</p>
-
-              <button className="btn btn-primary mt-3">
-                Buy Now
-              </button>
-            </div>
           </div>
 
-          <div className="col-md-4">
-            <div className="price-card">
-              <h3>Enterprise</h3>
-              <h1>Custom</h1>
 
-              <p>✔ Team Access</p>
-              <p>✔ HR Dashboard</p>
-              <p>✔ Analytics</p>
+          {/* PRO */}
+          <div className="price-card popular">
 
-              <button className="btn btn-outline-primary mt-3">
-                Contact Us
-              </button>
+            <div className="popular-badge">
+              Most Popular
             </div>
+
+            <h3>Pro</h3>
+
+            <h1>₹499</h1>
+
+            <p>✔ Unlimited Interviews</p>
+            <p>✔ Advanced AI Feedback</p>
+            <p>✔ Coding Practice</p>
+
+            <button
+              className="pricing-btn primary-btn"
+              onClick={() => navigate("/register")}
+            >
+              Buy Now
+            </button>
+
+          </div>
+
+
+          {/* PREMIUM */}
+          <div className="price-card">
+
+            <h3>Premium</h3>
+
+            <h1>₹999</h1>
+
+            <p>✔ Unlimited Interviews</p>
+            <p>✔ Advanced AI Feedback</p>
+            <p>✔ Coding Practice</p>
+            <p>✔ Priority Support</p>
+
+            <button
+              className="pricing-btn primary-btn"
+              onClick={() => navigate("/register")}
+            >
+              Buy Now
+            </button>
+
+          </div>
+
+
+          {/* ENTERPRISE */}
+          <div className="price-card">
+
+            <h3>Enterprise</h3>
+
+            <h1>Custom</h1>
+
+            <p>✔ Team Access</p>
+            <p>✔ HR Dashboard</p>
+            <p>✔ Analytics</p>
+            <p>✔ Dedicated Support</p>
+
+            <button
+              className="pricing-btn outline-btn"
+              onClick={() => {
+                document
+                  .getElementById("contact")
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
+            >
+              Contact Us
+            </button>
+
           </div>
 
         </div>

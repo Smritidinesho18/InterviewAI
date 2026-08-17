@@ -173,4 +173,16 @@
     font-size: 30px;
   }
 
+}.clickable-card {
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.18);
+}
+
+.clickable-card button {
+  cursor: pointer;
 }

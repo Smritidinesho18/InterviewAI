@@ -1,27 +1,153 @@
 .how-section {
-    padding: 80px 0;
-    background: #ffffff;
+  padding: 100px 0;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
 }
 
+.how-section h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #172554;
+  margin-bottom: 60px !important;
+}
+
+/* Steps layout */
+.how-section .row {
+  position: relative;
+}
+
+/* Connecting line */
+.how-section .row::before {
+  content: "";
+  position: absolute;
+  top: 48px;
+  left: 20%;
+  right: 20%;
+  height: 3px;
+  background: #bfdbfe;
+  z-index: 0;
+}
+
+/* Step card */
 .step-card {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 20px;
-    text-align: center;
+  position: relative;
+  z-index: 1;
+
+  background: #ffffff;
+  padding: 35px 25px;
+  border-radius: 20px;
+
+  text-align: center;
+
+  min-height: 260px;
+
+  border: 1px solid #dbeafe;
+
+  box-shadow: 0 10px 30px rgba(30, 64, 175, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.step-icon {
-    font-size: 55px;
-    color: #0d6efd;
-    margin-bottom: 20px;
-    display: block;
+/* Step number */
+.step-card h1 {
+  width: 70px;
+  height: 70px;
+
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 28px;
+
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
 }
 
+/* Heading */
 .step-card h4 {
-    margin-top: 15px;
-    font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 12px;
+
+  font-size: 20px;
+  font-weight: 700;
+
+  color: #172554;
 }
 
+/* Description */
 .step-card p {
-    color: #6c757d;
+  color: #64748b;
+
+  line-height: 1.7;
+
+  margin-bottom: 0;
+}
+
+/* Clickable card */
+.clickable-step {
+  cursor: pointer;
+}
+
+/* Hover */
+.clickable-step:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 20px 40px rgba(37, 99, 235, 0.15);
+}
+
+/* Button */
+.step-btn {
+  margin-top: 20px;
+
+  padding: 9px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  background: #2563eb;
+  color: white;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.step-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .how-section {
+    padding: 70px 20px;
+  }
+
+  .how-section h2 {
+    font-size: 30px;
+  }
+
+  .how-section .row::before {
+    display: none;
+  }
+
+  .step-card {
+    margin-bottom: 25px;
+  }
+
 }
